@@ -19,7 +19,7 @@ public class CouponsController {
     private UserLogin userLogin;
     // dif var in each function
 
-//:ToDo remove from all const in controllers userLogin
+
 
     @Autowired
     public CouponsController(CouponLogic couponLogic) {
@@ -31,8 +31,6 @@ public class CouponsController {
         UserLogin userLogin = JWTUtils.decodeJWT(token);
         coupon.setCompanyId(userLogin.getCompanyId());
         this.couponLogic.createCouponByCompany(coupon, userLogin.getUserType());
-
-        //:Todo add validation to not add coupon after end date
     }
 
     @PostMapping("/byadmin") // checked
