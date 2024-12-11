@@ -103,4 +103,10 @@ public class UsersController {
         UserLogin userLogin = JWTUtils.decodeJWT(token);
         return userLogic.getListOfUsersForCompanyByCompanyId(companyId, userLogin.getUserType(), page, size);
     }*/
+   @PostMapping("/login")
+   public String login(@RequestBody UserLoginData loginDetailsData) throws Exception {
+       return userLogic.login(loginDetailsData);
+
+
+   }
 }

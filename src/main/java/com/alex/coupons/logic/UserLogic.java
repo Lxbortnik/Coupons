@@ -76,6 +76,10 @@ public class UserLogic {
     }
 
     //:ToDo read about transactional & Runtime exception
+
+    //:ToDo  check from David's code logic and controller for creating user and customer
+    //:ToDo - double coding in Create Customer + create User By Admin - new f "Create User"  with validation for customer and admin
+    
     @Transactional
     public UserEntity createCustomer(User user) throws ServerException, RuntimeException {
         validateUser(user);

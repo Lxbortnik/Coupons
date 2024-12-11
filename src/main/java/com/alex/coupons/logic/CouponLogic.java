@@ -235,7 +235,7 @@ public class CouponLogic {
         }
 
         if (coupon.getEndDate().before(coupon.getStartDate())) {
-            throw new ServerException(ErrorType.INVALID_COUPON_DATE, coupon.toString());
+            throw new ServerException(ErrorType.INVALID_COUPON_END_DATE, coupon.toString());
         }
 
         if (coupon.getImageUrl() != null && coupon.getImageUrl().length() > 100) {
